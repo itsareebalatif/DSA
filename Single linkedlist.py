@@ -29,6 +29,26 @@ class Linkedlist:
          listed.append(str(current.val))
          current=current.next
       return "->".join(listed)   
+   
+   def leng(self):
+      temp=self.head
+      counter=0
+      while temp is not None:
+         temp=temp.next
+         counter+=1
+      return counter   
+   
+   def index_val(self,value):
+      temp=self.head
+      counter=0
+      while  temp is not None:
+         temp=temp.next
+         counter+=1
+         if temp.val==value :
+            return counter
+         
+      
+
 
 
 
@@ -36,7 +56,12 @@ def main():
    Linked_list=Linkedlist()
    Linked_list.push(2)
    Linked_list.push(3)
+   Linked_list.push(4)
+   Linked_list.push(5)
    print(Linked_list)
+   print("This is the length of our linked list:",Linked_list.leng())
+   print(Linked_list.index_val(5))
+   
 
 
 
