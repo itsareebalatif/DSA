@@ -48,7 +48,24 @@ class Linkedlist:
             return counter
          
       
+   def get_middle(self):
+      temp=self.head
+      length=0
+      while temp is not None:
+         temp=temp.next
+         length+=1
+      length
+      middle=length//2
+      temp=self.head
+      
+      while middle:
+         temp=temp.next
+         middle-=1
+         
+         
+      return temp.val   
 
+      
 
 
 
@@ -58,9 +75,12 @@ def main():
    Linked_list.push(3)
    Linked_list.push(4)
    Linked_list.push(5)
+   Linked_list.push(6)
    print(Linked_list)
    print("This is the length of our linked list:",Linked_list.leng())
-   print(Linked_list.index_val(5))
+   print(f"The index of given no you gave:",Linked_list.index_val(4))
+   Linked_list.get_middle()
+   print("This is middle of linked list:",Linked_list.get_middle())
    
 
 
