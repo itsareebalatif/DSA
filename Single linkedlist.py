@@ -49,12 +49,9 @@ class Linkedlist:
          
       
    def get_middle(self):
-      temp=self.head
-      length=0
-      while temp is not None:
-         temp=temp.next
-         length+=1
-      length
+      
+      length=self.leng()
+      
       middle=length//2
       temp=self.head
       
