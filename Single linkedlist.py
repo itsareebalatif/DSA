@@ -61,6 +61,53 @@ class Linkedlist:
          
          
       return temp.val   
+   
+
+   def remove(self,val):
+      temp=self.head
+      if self.head is None:
+         return
+      
+      if temp.val==val:
+         self.head=temp.next
+         temp=None
+         print("case 1 remove starting node")
+         return
+
+      prev=None
+      while temp is not None:
+         if temp.val==val:
+            prev.next=temp.next
+            temp=None
+            print("case 2 remove inbetwen node")
+            return
+         prev=temp
+         temp=temp.next
+      print("case 3 val not found ")   
+      return "not found" 
+   
+
+   def deleteNode(self,x):
+    # Code here
+    temp=self.head
+    if x==1:
+        self.head=temp.next
+        temp=None
+        return 
+    prev=None
+    counter=1
+    while temp is not None:
+        if counter==x:
+            prev.next=temp.next
+            temp=None
+            
+            return 
+        counter+=1    
+        prev=temp
+        temp=temp.next
+    return   
+
+
 
       
 
@@ -78,6 +125,11 @@ def main():
    print(f"The index of given no you gave:",Linked_list.index_val(4))
    Linked_list.get_middle()
    print("This is middle of linked list:",Linked_list.get_middle())
+   print(Linked_list.remove(2))
+   print(Linked_list)
+
+   print(Linked_list.deleteNode(1))
+   print(Linked_list)
    
 
 
