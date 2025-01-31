@@ -40,6 +40,43 @@ class Doubly:
         new_node.next=temp
         temp.prev=new_node
         self.head=new_node
+
+    def insert(self,index,val):
+        new_node=Node(val)
+        temp=self.head
+        if self.head is None:
+            return
+        if  index==0:
+            self.head=new_node
+            new_node.next=temp
+            temp.prev=new_node
+            return
+            
+
+        counter=0
+        previous=None
+        while temp  is not None and counter<index:
+            previous=temp
+            temp=temp.next
+            counter+=1
+        
+        # if index not found enter at last    
+        if temp is None:
+            
+            previous.next=new_node
+            new_node.prev=previous
+            return    
+        previous.next=new_node   
+        new_node.prev=previous
+
+        new_node.next=temp
+        temp.prev=new_node
+        return
+        
+        
+
+
+
         
 
     
@@ -71,13 +108,14 @@ def main():
     Doubly_Linked.push(1)
     Doubly_Linked.push(2)
     Doubly_Linked.push(3)
+    Doubly_Linked.insert(10,11)
+    Doubly_Linked.insert(19,12)
   
     print("This is Doubly:",Doubly_Linked)
     print("This is pop func:",Doubly_Linked.pop())
     Doubly_Linked.insert_start(0)
-    
-
     print("This is satrting insertion:",Doubly_Linked)
+
     
 
 
