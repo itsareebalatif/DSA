@@ -33,7 +33,21 @@ class Doubly_linked_list:
             temp.val=extra_set.pop() 
             temp=temp.next
         return        
- 
+    
+    def reverse_Better_approach(self):
+        if self.head is None:
+            return "Empty Linked list"
+        last=None
+        current=self.head
+        while current is not None:
+            last=current.prev
+            current.prev=current.next
+            current.next=last
+
+            current=current.prev
+        self.head=last.prev 
+        return   
+
 
 
 
@@ -56,7 +70,8 @@ def main():
     Doubly.push(2)
     Doubly.push(3)
     print(Doubly)
-    Doubly.reverse()
+    #Doubly.reverse()
+    Doubly.reverse_Better_approach()
     print(Doubly)
 
 if __name__=="__main__":
